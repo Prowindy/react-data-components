@@ -80,7 +80,7 @@ class Table {
           {...sortProps}>
           <span>{col.title}</span>
           {typeof order !== 'undefined' ?
-            <span className={`sort-icon sort-${order}`} aria-hidden="true" /> :
+            (<span aria-hidden="true">{order==="descending"?"V":"^"}</span>) :
             null}
         </th>
       );

@@ -81,7 +81,7 @@ class Pagination {
             onClick={firstHandler}
             aria-disabled={!isNotFirst}
             aria-label="First">
-            <span className="fa fa-angle-double-left" aria-hidden="true" />
+            <span aria-hidden="true">{"<<"}</span>
           </a>
         </li>
         <li className={!isNotFirst ? 'disabled' : null}>
@@ -89,7 +89,7 @@ class Pagination {
             onClick={prevHandler}
             aria-disabled={!isNotFirst}
             aria-label="Previous">
-            <span className="fa fa-angle-left" aria-hidden="true" />
+            <span aria-hidden="true">{"<"}</span>
           </a>
         </li>
         {buttons}
@@ -98,7 +98,7 @@ class Pagination {
             onClick={nextHandler}
             aria-disabled={!isNotLast}
             aria-label="Next">
-            <span className="fa fa-angle-right" aria-hidden="true" />
+            <span  aria-hidden="true">{">"}</span>
           </a>
         </li>
         <li className={!isNotLast ? 'disabled' : null}>
@@ -106,7 +106,7 @@ class Pagination {
             onClick={lastHandler}
             aria-disabled={!isNotLast}
             aria-label="Last">
-            <span className="fa fa-angle-double-right" aria-hidden="true" />
+            <span aria-hidden="true">{">>"}</span>
           </a>
         </li>
       </ul>
