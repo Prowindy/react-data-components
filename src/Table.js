@@ -80,7 +80,7 @@ class Table {
           {...sortProps}>
           <span>{col.title}</span>
           {typeof order !== 'undefined' ?
-            (<span aria-hidden="true">{order==="descending"?"&darr;":"&uarr;"}</span>) :
+            (<span aria-hidden="true">{order==="descending"?"\u2193":"\u2191"}</span>) :
             null}
         </th>
       );
