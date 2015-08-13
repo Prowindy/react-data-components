@@ -108,10 +108,13 @@ class Table {
             {headers}
           </tr>
         </thead>
-        <tbody>
+        <tbody onClick={this.props.clickHandler.bind(this)}>
           {rows.length > 0 ? rows :
             <tr>
-              <td colSpan={columns.length} className="text-center">No data</td>
+              <td colSpan={columns.length} className="text-center">
+              {typeof this.props.dataReceived == "undefined"?
+                "载入中……" : "没有可显示数据"}
+              </td>
             </tr>}
         </tbody>
       </table>
