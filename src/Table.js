@@ -58,7 +58,7 @@ class Table {
   }
 
   render() {
-    var { columns, keys, buildRowOptions, sortBy, onSort } = this.props;
+    var { columns, keys, buildRowOptions, sortBy, onSort, headClass } = this.props;
 
     var headers = columns.map((col, idx) => {
       var sortProps, order;
@@ -74,12 +74,12 @@ class Table {
         <th
           ref={c => this._headers[idx] = c}
           key={idx}
-          style={{width: col.width, backgroundColor: "#337ab7"}}
+          style={{width: col.width}}
           role="columnheader"
           scope="col"
           {...sortProps}>
           <span>{col.title}</span>
-
+          className=headClass
         </th>
       );
     });
