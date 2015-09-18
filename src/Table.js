@@ -77,9 +77,9 @@ class Table {
           style={{width: col.width}}
           role="columnheader"
           scope="col"
+          className={headClass}
           {...sortProps}>
           <span>{col.title}</span>
-          className=headClass
         </th>
       );
     });
