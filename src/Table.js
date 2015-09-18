@@ -18,9 +18,9 @@ var getCellValue =
       row[prop];
 
 var getCellClass =
-  ({ prop, className }, row) =>
+  ({ prop, className }, row, i) =>
     !isEmpty(prop) && isEmpty(row[prop]) ? 'empty-cell' :
-      typeof className === 'function' ? className(row[prop], row) :
+      typeof className === 'function' ? className(row[prop], row, i) :
       className;
 
 function buildSortProps(col, sortBy, onSort) {
@@ -74,7 +74,7 @@ class Table {
         <th
           ref={c => this._headers[idx] = c}
           key={idx}
-          style={{width: col.width}}
+          style={{width: col.width, backgroundColor: "#0099FF"}}
           role="columnheader"
           scope="col"
           {...sortProps}>
@@ -88,11 +88,11 @@ class Table {
 //  null}
     var getKeys = Array.isArray(keys) ? keyGetter(keys) : simpleGet(keys);
     var rows = this.props.dataArray.map(
-      row =>
-        <tr key={getKeys(row)} {...buildRowOptions(row)}>
+      (row, rowIndex) =>
+        <tr key={getKeys(row)} {...buildRowOptions(row, rowIndex)}>
           {columns.map(
             (col, i) =>
-              <td key={i} className={getCellClass(col, row)}>
+              <td key={i} className={getCellClass(col, row, i)}>
                 {getCellValue(col, row)}
               </td>
           )}
