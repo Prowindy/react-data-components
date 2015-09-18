@@ -79,13 +79,13 @@ class Table {
           scope="col"
           {...sortProps}>
           <span>{col.title}</span>
-          {typeof order !== 'undefined' ?
-            (<span aria-hidden="true">{order==="descending"?"\u2193":"\u2191"}</span>) :
-            null}
+
         </th>
       );
     });
-
+//{typeof order !== 'undefined' ?
+//  (<span aria-hidden="true">{order==="descending"?"\u2193":"\u2191"}</span>) :
+//  null}
     var getKeys = Array.isArray(keys) ? keyGetter(keys) : simpleGet(keys);
     var rows = this.props.dataArray.map(
       row =>

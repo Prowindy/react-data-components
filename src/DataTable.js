@@ -18,7 +18,7 @@ var DataTable = React.createClass({
     return (
       <div className={this.props.className}>
         <div className="row">
-          <div className="col-xs-4">
+          <div className="col-xs-3">
             <SelectField
               id="page-menu"
               label="Page size:"
@@ -26,6 +26,8 @@ var DataTable = React.createClass({
               options={this.props.pageLengthOptions}
               onChange={this.onPageLengthChange}
             />
+          </div>
+          <div className="col-xs-3">
             <SearchField
               id="search-field"
               label="Search:"
@@ -33,7 +35,7 @@ var DataTable = React.createClass({
               onChange={this.onFilter.bind(this, 'globalSearch')}
             />
           </div>
-          <div className="col-xs-8">
+          <div className="col-xs-6">
             <Pagination
               className="pagination pull-right"
               currentPage={page.currentPage}
