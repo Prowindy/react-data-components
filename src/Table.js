@@ -74,7 +74,7 @@ class Table {
         <th
           ref={c => this._headers[idx] = c}
           key={idx}
-          style={{width: col.width, backgroundColor: "#0099FF"}}
+          style={{width: col.width, backgroundColor: "#337ab7"}}
           role="columnheader"
           scope="col"
           {...sortProps}>
