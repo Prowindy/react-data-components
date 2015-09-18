@@ -21,6 +21,7 @@ class SearchField {
           type="search"
           value={this.props.value}
           onChange={this.onChange}
+          size={this.props.size}
         />
       </div>
     );
