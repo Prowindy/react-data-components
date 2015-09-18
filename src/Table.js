@@ -86,9 +86,10 @@ class Table {
 //  (<span aria-hidden="true">{order==="descending"?"\u2193":"\u2191"}</span>) :
 //  null}
     var getKeys = Array.isArray(keys) ? keyGetter(keys) : simpleGet(keys);
+    //key={getKeys(row)} 
     var rows = this.props.dataArray.map(
       (row, rowIndex) =>
-        <tr key={getKeys(row)} {...buildRowOptions(row, rowIndex)}>
+        <tr {...buildRowOptions(row, rowIndex)}>
           {columns.map(
             (col, i) =>
               <td key={i} className={getCellClass(col, row, i)}>
