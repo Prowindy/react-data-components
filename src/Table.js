@@ -77,7 +77,6 @@ class Table {
           style={{width: col.width}}
           role="columnheader"
           scope="col"
-          className={headClass}
           {...sortProps}>
           <span>{col.title}</span>
         </th>
@@ -104,7 +103,7 @@ class Table {
           {`Sorted by ${sortBy.prop}: ${sortBy.order} order`}
         </caption>
         <thead>
-          <tr>
+          <tr className={headClass}>
             {headers}
           </tr>
         </thead>
